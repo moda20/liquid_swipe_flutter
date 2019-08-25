@@ -90,8 +90,10 @@ class _LiquidSwipe extends State<LiquidSwipe> with TickerProviderStateMixin {
         }
         //if the user has done dragging
         else if (event.updateType == UpdateType.doneDragging) {
+
           // slidepercent > 0.2 so that it wont reveal itself unless this condition is true
-          if (slidePercent > 0.2) {
+          if (slidePercent > 0.1) {
+
             animatedPageDragger = AnimatedPageDragger(
               slideDirection: slideDirection,
               transitionGoal: TransitionGoal.open,
@@ -100,6 +102,7 @@ class _LiquidSwipe extends State<LiquidSwipe> with TickerProviderStateMixin {
               vsync: this,
             );
           } else {
+
             animatedPageDragger = AnimatedPageDragger(
               slideDirection: slideDirection,
               transitionGoal: TransitionGoal.close,

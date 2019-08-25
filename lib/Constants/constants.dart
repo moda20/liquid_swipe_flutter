@@ -1,9 +1,9 @@
 /// This package contains all the constants used.
 
 /// A constant value with works like a sensitivity of reveal.
-const FULL_TARNSITION_PX = 300.0;
+const FULL_TARNSITION_PX = 10.0;
 
-const PERCENT_PER_MILLISECOND = 0.00125;
+const PERCENT_PER_MILLISECOND = 0.00425;
 
 enum SlideDirection {
   leftToRight,

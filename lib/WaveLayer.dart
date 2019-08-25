@@ -38,8 +38,8 @@ class WaveLayer extends CustomClipper<Path> {
 
     path.cubicTo(
         maskWidth,
-        curveStartY - waveVertRadius * 0.1346194756,
-        maskWidth - waveHorRadius * 0.05341339583,
+        curveStartY - waveVertRadius * 0.0,
+        maskWidth - waveHorRadius * 0.00341339583,
         curveStartY - waveVertRadius * 0.2412779634,
         maskWidth - waveHorRadius * 0.1561501458,
         curveStartY - waveVertRadius * 0.3322374268);
@@ -124,15 +124,15 @@ class WaveLayer extends CustomClipper<Path> {
   }
 
   double sidewidth(Size size) {
-    var p1 = 0.2;
+    var p1 = 0.1;
     var p2 = 0.8;
     if (revealPercent <= p1) {
-      return 15.0;
+      return 0;
     }
     if (revealPercent >= p2) {
       return size.width;
     }
-    return 15.0 + (size.width - 15.0) * (revealPercent - p1) / (p2 - p1);
+    return 0 + (size.width - 15.0) * (revealPercent - p1) / (p2 - p1);
   }
 
   @override
@@ -141,7 +141,7 @@ class WaveLayer extends CustomClipper<Path> {
   }
 
   double waveVertRadiusF(Size size) {
-    var p1 = 0.4;
+    var p1 = 0.9;
     if (revealPercent <= 0) {
       return 82.0;
     }
@@ -158,7 +158,7 @@ class WaveLayer extends CustomClipper<Path> {
     if (revealPercent >= 1) {
       return 0;
     }
-    var p1 = 0.4;
+    var p1 = 0.6;
     if (revealPercent <= p1) {
       return 48.0 + revealPercent / p1 * ((size.width * 0.8) - 48.0);
     }

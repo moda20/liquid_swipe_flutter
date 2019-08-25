@@ -75,6 +75,10 @@ class AnimatedPageDragger {
     completionAnimationController.forward(from: 0.0);
   }
 
+  void stop(){
+    completionAnimationController.stop(canceled: false);
+  }
+
   //This method is used to dispose animation controller
   void dispose() {
     completionAnimationController.dispose();
